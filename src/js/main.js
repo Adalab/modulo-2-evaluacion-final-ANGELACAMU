@@ -9,6 +9,8 @@ Cuando la usuaria hace click en el boton buscar:
     - acceder/guardar los datos que necesita
     - pintar los datos en el html
 
+Si la imagen de la serie es fallida debemos cambiar el enlace de la serie
+
    3.FAVORITOS
 Cuando la usuaria haga click sobre la serie en concreto:
   - averiguar que serie ha seleccionado la usuaria
@@ -47,6 +49,10 @@ function handleClick(ev) {
                     <img src="${serie.images.jpg.image_url}" alt="imagen-anime">
                 </section>
             `
+                let imagePlaceHolder = "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png";
+                if (imagePlaceHolder === "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png") {
+                    imagePlaceHolder = "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";  // Si es igual, cambia el valor
+                }
 
             }
 
