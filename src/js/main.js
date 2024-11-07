@@ -25,9 +25,10 @@ function handleClick(ev) {
             const series = info.data;
             console.log(series);
             for (const serie of series) {
-                sectionSearch.innerHTML = `
+                sectionSearch.innerHTML += `
                 <section class="sectionSearch">
-                    <h5>${series}</h5>
+                    <h5>${serie.title}</h5>
+                    <img src="${serie.images.jpg.image_url}" alt="imagen-anime">
                 </section>
             `
             }
