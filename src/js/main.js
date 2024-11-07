@@ -24,6 +24,7 @@ function handleClick(ev) {
         .then(info => {
             const series = info.data;
             console.log(series);
+            sectionSearch.innerHTML = "";
             for (const serie of series) {
                 sectionSearch.innerHTML += `
                 <section class="sectionSearch">
@@ -31,7 +32,9 @@ function handleClick(ev) {
                     <img src="${serie.images.jpg.image_url}" alt="imagen-anime">
                 </section>
             `
+
             }
+
 
         })
 
