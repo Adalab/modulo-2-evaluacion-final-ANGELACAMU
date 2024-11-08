@@ -7,7 +7,7 @@
 
 .form {
     padding: 15px;
-
+    font-family: sans-serif;
 }
 
 .js-input {
@@ -15,5 +15,27 @@
 }
 
 .button-search {
+    font-size: 22px;
+}
+
+.title-serie{
+    font-size: 22px;
+    padding: 15px;
+    font-family: sans-serif;
+}
+
+.container-results{
+    display: flex;
+    
+    
+}
+
+.container-favorites{
+    padding: 15px;
+    font-family: sans-serif;
+    
+}
+
+.title-favorites{
     font-size: 22px;
 }
