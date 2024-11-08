@@ -27,7 +27,7 @@ Cuando la usuaria haga click sobre la serie en concreto:
 const buttonSearch = document.querySelector(".js-button-search");
 const inputSearch = document.querySelector(".js-input");
 const sectionSearch = document.querySelector(".js-section");
-const sectionFavorites = document.querySelector("js-section-favorites");
+const sectionFavorites = document.querySelector(".js-section-favorites");
 
 let seriesList = [];
 let favoriteSeriesList = [];
@@ -71,8 +71,8 @@ function handleClick(ev) {
 }
 
 
-
 buttonSearch.addEventListener("click", handleClick);
+
 
 //Series favoritas//
 function handleAddFavorite(event) {
@@ -92,4 +92,17 @@ function handleAddFavorite(event) {
     //añadir serie a favoritas//
     favoriteSeriesList.push(serieSelected);
     console.log(favoriteSeriesList);
+
+    //pintar las series favoritas//
+
+    for (const serie of favoriteSeriesList) {
+        sectionFavorites.innerHTML += `
+                <div id=${serie.mal_id} class="sectionSearch js-series">
+                    <h5>${serie.title}</h5>
+                    <img src="${serie.images.jpg.image_url}" alt="imagen-anime">
+                </div>
+            `
+
+    }
+
 }
