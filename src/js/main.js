@@ -94,7 +94,7 @@ function handleAddFavorite(event) {
     console.log(favoriteSeriesList);
 
     //pintar las series favoritas//
-
+    sectionFavorites.innerHTML = "";
     for (const serie of favoriteSeriesList) {
         sectionFavorites.innerHTML += `
                 <div id=${serie.mal_id} class="sectionSearch js-series">
