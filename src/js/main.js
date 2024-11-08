@@ -21,6 +21,12 @@ Cuando la usuaria haga click sobre la serie en concreto:
 
   4.ALMACENAMIENTO
   almacenar el listado de favoritos en el localStorage
+   -selecionamos los identificadores
+   -recogemos lo que hay en el localStorage
+   -convertimos el objeto en una cadena de texto
+   -almacenar las series en el localStorage
+   -Obtener la serie del localStorage
+
 
 */
 
