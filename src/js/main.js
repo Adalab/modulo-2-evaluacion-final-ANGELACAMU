@@ -27,6 +27,7 @@ Cuando la usuaria haga click sobre la serie en concreto:
 const buttonSearch = document.querySelector(".js-button-search");
 const inputSearch = document.querySelector(".js-input");
 const sectionSearch = document.querySelector(".js-section");
+const sectionFavorites = document.querySelector("js-section-favorites");
 
 let seriesList = [];
 let favoriteSeriesList = [];
@@ -42,14 +43,14 @@ function handleClick(ev) {
         .then(res => res.json())
         .then(info => {
             const series = info.data;
-            console.log(series);
+            seriesList = info.data;
             sectionSearch.innerHTML = "";
             for (const serie of series) {
                 sectionSearch.innerHTML += `
-                <section class="sectionSearch js-series">
+                <div id=${serie.mal_id} class="sectionSearch js-series">
                     <h5>${serie.title}</h5>
                     <img src="${serie.images.jpg.image_url}" alt="imagen-anime">
-                </section>
+                </div>
             `
                 let imagePlaceHolder = "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png";
                 if (imagePlaceHolder === "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png") {
@@ -75,7 +76,20 @@ buttonSearch.addEventListener("click", handleClick);
 
 //Series favoritas//
 function handleAddFavorite(event) {
-    console.log("click en una serie");
-    console.log(seriesList);  //no me funciona xq//
+    console.log(seriesList);
+    // console.log(event.currentTarget);
     const idSerieClicked = event.currentTarget.id;
+
+    const serieSelected = seriesList.find((serie) => {
+        console.log(serie.mal_id);
+        console.log(idSerieClicked);
+        return serie.mal_id === parseInt(idSerieClicked);
+    })
+
+    console.log(serieSelected);
+
+
+    //añadir serie a favoritas//
+    favoriteSeriesList.push(serieSelected);
+    console.log(favoriteSeriesList);
 }
