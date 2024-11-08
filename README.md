@@ -7,7 +7,7 @@ Web realizada con un diseño sencillo, básico e intuitivo.
 
 #Instalación y configuración
 
-Clonar el repositorio. Puedes acceder a él mediante este enlace: 
+Clonar el repositorio. Puedes acceder a él mediante este enlace: http://beta.adalab.es/modulo-2-evaluacion-final-ANGELACAMU/ 
 
 Instalar las dependencias. Escribiendo en la terminal: npm install
 
