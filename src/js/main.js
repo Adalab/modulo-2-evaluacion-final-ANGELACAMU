@@ -21,12 +21,10 @@ Cuando la usuaria haga click sobre la serie en concreto:
 
   4.ALMACENAMIENTO
   almacenar el listado de favoritos en el localStorage
-   -selecionamos los identificadores
-   -recogemos lo que hay en el localStorage
-   -convertimos el objeto en una cadena de texto
-   -almacenar las series en el localStorage
-   -Obtener la serie del localStorage
-
+   -cuando la usuaria seleciona una serie como favorita:
+       -guardamos las series favoritas actualizadas en el localStorage (get item fuera)
+   -ver si tengo algo en localStorage (al cargar la pag)
+   Si tengo las series en mi localStorage las pinto si no NO. (le pasamos el id de el get item?)
 
 */
 
@@ -37,6 +35,15 @@ const sectionFavorites = document.querySelector(".js-section-favorites");
 
 let seriesList = [];
 let favoriteSeriesList = [];
+
+// Obteniendo la serie fav del localStorage
+const serieLocalStorage = localStorage.getItem("serieUser");
+
+if (serieLocalStorage !== null) {
+    const serieObject = JSON.parse(serieLocalStorage);
+    console.log(serieObject);
+}
+//me faltan pasos no me da tiempo//
 
 
 
@@ -98,6 +105,10 @@ function handleAddFavorite(event) {
     //añadir serie a favoritas//
     favoriteSeriesList.push(serieSelected);
     console.log(favoriteSeriesList);
+
+    //guardar las favoriteSeriesList en el localStorage -set item//
+    localStorage.setItem("serieUser", JSON.stringify(favoriteSeriesList));
+
 
     //pintar las series favoritas//
     sectionFavorites.innerHTML = "";
