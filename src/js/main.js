@@ -63,6 +63,7 @@ function handleClick(ev) {
                 <div id=${serie.mal_id} class="sectionSearch js-series">
                     <h5>${serie.title}</h5>
                     <img src="${serie.images.jpg.image_url}" alt="imagen-anime">
+                    <p>${serie.duration}</p>
                 </div>
             `
                 let imagePlaceHolder = "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png";
